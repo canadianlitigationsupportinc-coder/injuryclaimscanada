@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Injury Claim Canada Inc. | Legal & Physiotherapy Support Ontario</title>
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- FontAwesome Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@600;700;800&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: {
+                            800: '#0F172A',
+                            900: '#0B132B',
+                            950: '#050B1A'
+                        },
+                        gold: {
+                            400: '#F59E0B',
+                            500: '#D97706',
+                            600: '#B45309'
+                        },
+                        crimson: {
+                            600: '#DC2626',
+                            700: '#B91C1C'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                        serif: ['Cinzel', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .hero-bg {
+            background-image: linear-gradient(180deg, rgba(5, 11, 26, 0.88) 0%, rgba(11, 19, 43, 0.92) 100%), 
+                              url('https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+        }
+        .gold-gradient-text {
+            background: linear-gradient(135deg, #FDE68A 0%, #F59E0B 50%, #D97706 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .gold-btn {
+            background: linear-gradient(135deg, #F59E0B 0%, #D97706 100%);
+        }
+    </style>
+</head>
+<body class="bg-slate-50 text-slate-800 font-sans antialiased pb-20 md:pb-0">
+
+    <!-- Top Emergency Helpline Bar -->
+    <div class="bg-navy-950 text-white py-2 px-4 text-xs font-medium border-b border-slate-800 sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-2">
+                <span class="bg-crimson-600 text-white text-[10px] font-extrabold uppercase px-2 py-0.5 rounded">24/7 Support</span>
+                <span class="hidden sm:inline text-slate-300">Injured in an accident? Get Legal & Physio Care across Ontario.</span>
+            </div>
+            <div class="flex items-center gap-4 text-xs">
+                <a href="tel:4166663486" class="text-gold-400 font-bold hover:underline flex items-center gap-1">
+                    <i class="fa-solid fa-phone"></i> (416) 666-3486
+                </a>
+                <span class="text-slate-600">|</span>
+                <a href="tel:4375618125" class="text-slate-300 hover:text-white hidden sm:inline">
+                    (437) 561-8125
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Navigation Bar -->
+    <header class="bg-navy-900 text-white border-b border-navy-800 sticky top-8 z-40 shadow-lg">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-3.5 flex justify-between items-center">
+            
+            <!-- Logo -->
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-navy-800 border border-gold-400/40 flex items-center justify-center text-gold-400 text-xl shadow-md">
+                    <i class="fa-solid fa-scale-balanced"></i>
+                </div>
+                <div>
+                    <div class="font-serif font-bold text-lg sm:text-xl tracking-wide text-white leading-tight">
+                        INJURY CLAIM <span class="text-gold-400">CANADA</span>
+                    </div>
+                    <div class="text-[10px] text-slate-400 font-medium tracking-wider uppercase">Legal & Physio Support Services</div>
+                </div>
+            </a>
+
+            <!-- Desktop Menu -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-gold-400 transition">Why Us</a>
+                <a href="#services" class="hover:text-gold-400 transition">Claim Types</a>
+                <a href="#physio" class="hover:text-gold-400 transition">Physio Clinics</a>
+                <a href="#contact" class="hover:text-gold-400 transition">Contact</a>
+            </nav>
+
+            <!-- Call to Action -->
+            <div class="hidden sm:flex items-center gap-3">
+                <a href="#consultation" class="gold-btn text-navy-950 font-bold px-5 py-2.5 rounded-xl text-xs sm:text-sm hover:brightness-110 shadow-md transition flex items-center gap-2">
+                    <i class="fa-solid fa-file-signature"></i> Free Case Review
+                </a>
+            </div>
+
+            <!-- Mobile Toggle Button -->
+            <button onclick="toggleMenu()" aria-label="Toggle Navigation Menu" class="md:hidden p-2 text-slate-300 hover:text-white focus:outline-none">
+                <i class="fa-solid fa-bars text-xl" id="menuBtn"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu Drawer -->
+        <div id="mobileMenu" class="hidden md:hidden bg-navy-950 border-t border-navy-800 px-5 py-6 space-y-4">
+            <a href="#about" onclick="toggleMenu()" class="block text-slate-200 hover:text-gold-400 py-2 border-b border-navy-900">Why Us</a>
+            <a href="#services" onclick="toggleMenu()" class="block text-slate-200 hover:text-gold-400 py-2 border-b border-navy-900">Claim Types</a>
+            <a href="#physio" onclick="toggleMenu()" class="block text-slate-200 hover:text-gold-400 py-2 border-b border-navy-900">Physio Clinics</a>
+            <a href="#contact" onclick="toggleMenu()" class="block text-slate-200 hover:text-gold-400 py-2 border-b border-navy-900">Contact & Office</a>
+            
+            <a href="tel:4166663486" class="w-full bg-crimson-600 text-white font-bold py-3 rounded-xl text-center flex items-center justify-center gap-2 text-sm mt-4">
+                <i class="fa-solid fa-phone"></i> Call (416) 666-3486
+            </a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero-bg text-white py-14 sm:py-20 lg:py-28 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <!-- Hero Left Content -->
+                <div class="lg:col-span-7 space-y-6 text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-navy-900/90 border border-gold-400/30 text-gold-400 text-xs font-semibold">
+                        <i class="fa-solid fa-shield-halved"></i> All Legal & Recovery Care Under One Roof
+                    </div>
+
+                    <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-extrabold leading-tight">
+                        GOT INJURED IN <br>
+                        <span class="gold-gradient-text">AN ACCIDENT?</span>
+                    </h1>
+
+                    <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto lg:mx-0 font-normal leading-relaxed">
+                        We connect you with a <strong>Group of Expert Lawyers</strong> and <strong>Physio Clinics All Over Ontario</strong>. We handle your entire injury claim from legal representation to physical rehabilitation with zero upfront fees.
+                    </p>
+
+                    <!-- Features List -->
+                    <div class="grid grid-cols-2 sm:grid-cols-3 gap-3 pt-2 text-left">
+                        <div class="bg-navy-900/80 border border-navy-800 p-3 rounded-xl">
+                            <i class="fa-solid fa-gavel text-gold-400 text-base mb-1"></i>
+                            <div class="text-xs font-bold text-white">Expert Legal Team</div>
+                            <div class="text-[11px] text-slate-400">Maximum compensation</div>
+                        </div>
+                        <div class="bg-navy-900/80 border border-navy-800 p-3 rounded-xl">
+                            <i class="fa-solid fa-user-doctor text-gold-400 text-base mb-1"></i>
+                            <div class="text-xs font-bold text-white">Ontario Physio Clinics</div>
+                            <div class="text-[11px] text-slate-400">Faster active recovery</div>
+                        </div>
+                        <div class="bg-navy-900/80 border border-navy-800 p-3 rounded-xl col-span-2 sm:col-span-1">
+                            <i class="fa-solid fa-house-medical text-gold-400 text-base mb-1"></i>
+                            <div class="text-xs font-bold text-white">Home & Hospital Visits</div>
+                            <div class="text-[11px] text-slate-400">Or Zoom video consults</div>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-3 pt-4 justify-center lg:justify-start">
+                        <a href="tel:4166663486" class="bg-crimson-600 hover:bg-crimson-700 text-white font-bold px-7 py-3.5 rounded-xl shadow-lg transition flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-phone"></i> Call Hotline: (416) 666-3486
+                        </a>
+                        <a href="#consultation" class="bg-navy-900 border border-gold-400 text-gold-400 hover:bg-gold-500 hover:text-navy-950 font-bold px-7 py-3.5 rounded-xl transition flex items-center justify-center gap-2 text-sm">
+                            <i class="fa-solid fa-calendar-check"></i> Free Case Assessment
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Consultation Form -->
+                <div class="lg:col-span-5" id="consultation">
+                    <div class="bg-navy-900/95 border border-gold-400/40 rounded-2xl p-6 shadow-2xl backdrop-blur">
+                        <div class="text-center mb-5">
+                            <h3 class="font-serif text-xl font-bold text-white">Free Confidential Consultation</h3>
+                            <p class="text-xs text-slate-400 mt-1">Tell us about your injury. We take care of the rest.</p>
+                        </div>
+
+                        <form onsubmit="handleForm(event)" class="space-y-3.5">
+                            <div>
+                                <label class="block text-[11px] font-semibold text-slate-300 uppercase mb-1">Full Name *</label>
+                                <input type="text" required placeholder="e.g. Sarah Johnson" class="w-full bg-navy-950 border border-navy-800 rounded-lg px-3.5 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-gold-400">
+                            </div>
+
+                            <div class="grid grid-cols-2 gap-3">
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-slate-300 uppercase mb-1">Phone *</label>
+                                    <input type="tel" required placeholder="(416) 000-0000" class="w-full bg-navy-950 border border-navy-800 rounded-lg px-3.5 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-gold-400">
+                                </div>
+                                <div>
+                                    <label class="block text-[11px] font-semibold text-slate-300 uppercase mb-1">Email</label>
+                                    <input type="email" placeholder="name@domain.com" class="w-full bg-navy-950 border border-navy-800 rounded-lg px-3.5 py-2 text-white placeholder-slate-500 text-xs focus:outline-none focus:border-gold-400">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label class="block text-[11px] font-semibold text-slate-300 uppercase mb-1">Type of Injury / Incident *</label>
+                                <select required class="w-full bg-navy-950 border border-navy-800 rounded-lg px-3.5 py-2 text-white text-xs focus:outline-none focus:border-gold-400">
+                                    <option value="" disabled selected>Select Incident Type</option>
+                                    <option value="Car Accident">Car / Vehicle Accident</option>
+                                    <option value="Dog Bite">Dog Bite / Animal Attack</option>
+                                    <option value="Slip and Fall">Slip & Fall Incident</option>
+                                    <option value="Extended Health Care">Extended Health Care Claim</option>
+                                    <option value="Premises Liability">Premises Liability</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label class="block text-[11px] font-semibold text-slate-300 uppercase mb-1">Meeting Preference</label>
+                                <select class="w-full bg-navy-950 border border-navy-800 rounded-lg px-3.5 py-2 text-white text-xs focus:outline-none focus:border-gold-400">
+                                    <option value="Zoom">Zoom Video Call</option>
+                                    <option value="Home">In-Person Home Visit</option>
+                                    <option value="Hospital">In-Person Hospital Visit</option>
+                                    <option value="Office">Office Visit (Westwood Square)</option>
+                                </select>
+                            </div>
+
+                            <button type="submit" class="w-full gold-btn text-navy-950 font-bold py-3 rounded-lg text-xs uppercase tracking-wider hover:brightness-110 shadow-md transition">
+                                Submit Consultation Request
+                            </button>
+                        </form>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Practice / Claim Categories Section -->
+    <section id="services" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-12">
+                <span class="text-crimson-600 font-bold text-xs uppercase tracking-widest">How We Assist You</span>
+                <h2 class="font-serif text-2xl sm:text-4xl font-bold text-navy-900 mt-1">Injury Claim Categories</h2>
+                <div class="w-16 h-1 bg-gold-400 mx-auto mt-3 rounded-full"></div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                
+                <!-- Card 1: Car Accident -->
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1563720223185-11003d516935?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://placehold.co/800x500/0B132B/FFFFFF?text=Car+Accident'" alt="Car Accident" class="w-full h-full object-cover">
+                            <span class="absolute top-3 right-3 bg-crimson-600 text-white text-[10px] font-bold px-2.5 py-1 rounded-full uppercase">Top Category</span>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif font-bold text-xl text-navy-900 mb-2">Car Accidents</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                Complete claims handling for motor vehicle collisions, driver, passenger, or pedestrian injuries. We fight for statutory accident benefits and loss of income compensation.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#consultation" class="w-full bg-navy-900 text-white hover:bg-gold-500 hover:text-navy-950 font-bold py-2.5 px-4 rounded-xl text-center text-xs transition block">
+                            Start Car Claim Review <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 2: Dog Bite -->
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://placehold.co/800x500/0B132B/FFFFFF?text=Dog+Bite'" alt="Dog Bite" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif font-bold text-xl text-navy-900 mb-2">Dog Bites</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                Dog owners in Ontario are strictly held accountable for attacks. We help victims cover medical costs, plastic surgery, and trauma compensation.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#consultation" class="w-full bg-navy-900 text-white hover:bg-gold-500 hover:text-navy-950 font-bold py-2.5 px-4 rounded-xl text-center text-xs transition block">
+                            Report Animal Attack <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 3: Slip and Fall -->
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1517646287270-a5a9ca602e5c?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://placehold.co/800x500/0B132B/FFFFFF?text=Slip+and+Fall'" alt="Slip and Fall" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif font-bold text-xl text-navy-900 mb-2">Slip and Fall</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                Icy sidewalks, wet commercial store floors, or poorly maintained steps. We guide you through strict Ontario legal notification deadlines.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#consultation" class="w-full bg-navy-900 text-white hover:bg-gold-500 hover:text-navy-950 font-bold py-2.5 px-4 rounded-xl text-center text-xs transition block">
+                            Assess Slip & Fall <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 4: Extended Health Care -->
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&w=800&q=80" onerror="this.src='https://placehold.co/800x500/0B132B/FFFFFF?text=Extended+Health'" alt="Extended Health Care" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif font-bold text-xl text-navy-900 mb-2">Extended Health Care</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                Maximizing all available healthcare coverage, attendant care allowances, assistive devices, and long-term treatment insurance claims.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#consultation" class="w-full bg-navy-900 text-white hover:bg-gold-500 hover:text-navy-950 font-bold py-2.5 px-4 rounded-xl text-center text-xs transition block">
+                            Review Health Benefits <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Card 5: Premises Liability -->
+                <div class="bg-slate-50 rounded-2xl border border-slate-200 overflow-hidden shadow-sm hover:shadow-md transition duration-200 flex flex-col justify-between lg:col-span-2">
+                    <div>
+                        <div class="h-44 overflow-hidden relative">
+                            <img src="https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=1200&q=80" onerror="this.src='https://placehold.co/800x500/0B132B/FFFFFF?text=Premises+Liability'" alt="Premises Liability" class="w-full h-full object-cover">
+                        </div>
+                        <div class="p-6">
+                            <h3 class="font-serif font-bold text-xl text-navy-900 mb-2">Premises Liability Experts</h3>
+                            <p class="text-slate-600 text-xs sm:text-sm leading-relaxed">
+                                Property owners have a duty of care under Ontario law to keep visitors safe. If you were injured due to unsafe structure, inadequate security, or negligence on commercial or residential property, our team holds them accountable.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0">
+                        <a href="#consultation" class="w-full bg-navy-900 text-white hover:bg-gold-500 hover:text-navy-950 font-bold py-2.5 px-4 rounded-xl text-center text-xs transition block">
+                            Consult Premises Experts <i class="fa-solid fa-arrow-right ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Physio Clinics Network Section -->
+    <section id="physio" class="py-16 bg-navy-900 text-white border-y border-navy-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                
+                <div class="lg:col-span-6 space-y-5">
+                    <span class="text-gold-400 font-bold text-xs uppercase tracking-widest">Medical Recovery Network</span>
+                    <h2 class="font-serif text-3xl font-bold leading-tight">
+                        Physio Clinics <br>
+                        <span class="gold-gradient-text">All Over Ontario</span>
+                    </h2>
+                    <p class="text-slate-300 text-xs sm:text-sm leading-relaxed">
+                        Injury Claim Canada Inc. coordinates directly with licensed physiotherapy and active rehabilitation clinics throughout Ontario. Recovery care begins immediately without out-of-pocket financial strain.
+                    </p>
+
+                    <div class="space-y-3 pt-2">
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 bg-gold-400/20 text-gold-400 rounded flex items-center justify-center font-bold text-xs shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Professional Care & Faster Recovery</h4>
+                                <p class="text-xs text-slate-400">Customized physiotherapy, massage, and active pain management.</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3">
+                            <div class="w-7 h-7 bg-gold-400/20 text-gold-400 rounded flex items-center justify-center font-bold text-xs shrink-0">
+                                <i class="fa-solid fa-check"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-sm text-white">Direct Insurance Documentation</h4>
+                                <p class="text-xs text-slate-400">We align rehabilitation treatments directly with your legal claim benefits.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="pt-2">
+                        <a href="tel:4166663486" class="inline-flex items-center gap-2 bg-crimson-600 hover:bg-crimson-700 text-white font-bold px-6 py-3 rounded-xl text-xs transition">
+                            <i class="fa-solid fa-phone"></i> Locate Physio Clinic Near You: (416) 666-3486
+                        </a>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-6 bg-navy-950 p-6 rounded-2xl border border-navy-800 space-y-4">
+                    <h3 class="font-serif text-lg font-bold text-gold-400 border-b border-navy-800 pb-2">Ontario Coverage Network</h3>
+                    
+                    <div class="grid grid-cols-2 gap-3 text-xs">
+                        <div class="p-3 bg-navy-900 rounded-xl border border-navy-800">
+                            <div class="font-bold text-white mb-0.5"><i class="fa-solid fa-location-dot text-gold-400 mr-1"></i> Peel Region</div>
+                            <div class="text-slate-400 text-[11px]">Mississauga, Brampton, Caledon</div>
+                        </div>
+                        <div class="p-3 bg-navy-900 rounded-xl border border-navy-800">
+                            <div class="font-bold text-white mb-0.5"><i class="fa-solid fa-location-dot text-gold-400 mr-1"></i> Greater Toronto Area</div>
+                            <div class="text-slate-400 text-[11px]">Toronto, Etobicoke, Scarborough</div>
+                        </div>
+                        <div class="p-3 bg-navy-900 rounded-xl border border-navy-800">
+                            <div class="font-bold text-white mb-0.5"><i class="fa-solid fa-location-dot text-gold-400 mr-1"></i> York Region</div>
+                            <div class="text-slate-400 text-[11px]">Vaughan, Markham, Richmond Hill</div>
+                        </div>
+                        <div class="p-3 bg-navy-900 rounded-xl border border-navy-800">
+                            <div class="font-bold text-white mb-0.5"><i class="fa-solid fa-location-dot text-gold-400 mr-1"></i> Halton & Beyond</div>
+                            <div class="text-slate-400 text-[11px]">Oakville, Burlington, Hamilton, Ottawa</div>
+                        </div>
+                    </div>
+
+                    <div class="p-3 bg-navy-900/60 rounded-xl border border-gold-400/20 text-xs text-slate-300">
+                        <span class="text-gold-400 font-bold">Cannot travel?</span> We arrange virtual Zoom consultations and mobile legal bedside visits at home or hospital.
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Location Section -->
+    <section id="contact" class="py-16 bg-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                
+                <!-- Contact Details -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div>
+                        <span class="text-crimson-600 font-bold text-xs uppercase tracking-widest">Reach Us Directly</span>
+                        <h2 class="font-serif text-3xl font-bold text-navy-900 mt-1">Contact Injury Claim Canada Inc.</h2>
+                        <p class="text-slate-600 text-xs sm:text-sm mt-2">
+                            We are available 24/7 to answer questions and evaluate your injury claim.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4 text-xs sm:text-sm">
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 bg-navy-900 text-gold-400 rounded-lg flex items-center justify-center text-base shrink-0">
+                                <i class="fa-solid fa-location-dot"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Office Location</h4>
+                                <p class="text-slate-600 mt-0.5 leading-relaxed">
+                                    1B 20, Ground Floor Westwood Square<br>
+                                    7205 Goreway Dr, Mississauga, ON L4T 0B4
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 bg-crimson-600 text-white rounded-lg flex items-center justify-center text-base shrink-0">
+                                <i class="fa-solid fa-phone"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Helpline Numbers</h4>
+                                <div class="space-y-1 mt-1">
+                                    <a href="tel:4166663486" class="block text-navy-900 hover:text-crimson-600 font-bold">(416) 666-3486</a>
+                                    <a href="tel:4375618125" class="block text-slate-700 hover:text-crimson-600 font-medium">(437) 561-8125</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start gap-3.5">
+                            <div class="w-9 h-9 bg-navy-900 text-gold-400 rounded-lg flex items-center justify-center text-base shrink-0">
+                                <i class="fa-solid fa-envelope"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-navy-900 text-sm">Email Address</h4>
+                                <a href="mailto:injuryclaimcanada@gmail.com" class="text-slate-600 hover:text-gold-600 font-medium">injuryclaimcanada@gmail.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Google Map Container -->
+                <div class="lg:col-span-7 bg-navy-900 rounded-2xl p-5 text-white shadow-xl border border-navy-800 flex flex-col justify-between">
+                    <div>
+                        <div class="flex items-center justify-between mb-3 border-b border-navy-800 pb-2">
+                            <div>
+                                <h3 class="font-serif font-bold text-lg text-gold-400">Westwood Square Office</h3>
+                                <p class="text-xs text-slate-400">Ground Floor Unit 1B 20</p>
+                            </div>
+                            <span class="bg-emerald-500/20 text-emerald-400 text-xs px-2.5 py-1 rounded-full font-bold">Open Daily</span>
+                        </div>
+
+                        <div class="w-full h-60 sm:h-72 rounded-xl overflow-hidden border border-navy-700">
+                            <iframe 
+                                title="Office Location Map"
+                                class="w-full h-full border-0" 
+                                loading="lazy" 
+                                allowfullscreen 
+                                src="https://maps.google.com/maps?q=7205%20Goreway%20Dr%2C%20Mississauga%2C%20ON%20L4T%200B4&t=&z=15&ie=UTF8&iwloc=&output=embed">
+                            </iframe>
+                        </div>
+                    </div>
+
+                    <div class="mt-3 text-xs text-slate-400 flex justify-between items-center">
+                        <span>Serving Mississauga, Brampton & all of Ontario</span>
+                        <a href="https://maps.google.com/?q=7205+Goreway+Dr+Mississauga+ON+L4T+0B4" target="_blank" class="text-gold-400 hover:underline font-bold">
+                            Open in Google Maps <i class="fa-solid fa-arrow-up-right-from-square ml-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy-950 text-slate-400 py-10 border-t border-navy-800 text-xs">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 space-y-6">
+            <div class="flex flex-col sm:flex-row justify-between items-center gap-4 border-b border-navy-900 pb-6">
+                <div class="flex items-center gap-2">
+                    <div class="w-7 h-7 bg-navy-800 border border-gold-400 rounded flex items-center justify-center text-gold-400 font-bold">
+                        <i class="fa-solid fa-scale-balanced"></i>
+                    </div>
+                    <span class="font-serif font-bold text-white text-base">INJURY CLAIM <span class="text-gold-400">CANADA</span></span>
+                </div>
+                <div class="flex gap-4 text-xs">
+                    <a href="tel:4166663486" class="hover:text-gold-400">(416) 666-3486</a>
+                    <span>•</span>
+                    <a href="tel:4375618125" class="hover:text-gold-400">(437) 561-8125</a>
+                    <span>•</span>
+                    <a href="mailto:injuryclaimcanada@gmail.com" class="hover:text-gold-400">injuryclaimcanada@gmail.com</a>
+                </div>
+            </div>
+
+            <div class="text-center text-slate-500 space-y-2">
+                <p>1B 20, Ground Floor Westwood Square, 7205 Goreway Dr, Mississauga, ON L4T 0B4</p>
+                <p>&copy; <span id="year"></span> Injury Claim Canada Inc. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Fixed Bottom Bar for Mobile -->
+    <div class="md:hidden fixed bottom-0 left-0 right-0 bg-navy-900 border-t border-navy-800 z-50 p-2 flex gap-2">
+        <a href="tel:4166663486" class="flex-1 bg-crimson-600 text-white font-bold py-2.5 rounded-xl text-center text-xs flex items-center justify-center gap-2">
+            <i class="fa-solid fa-phone"></i> Call (416) 666-3486
+        </a>
+        <a href="#consultation" class="flex-1 gold-btn text-navy-950 font-bold py-2.5 rounded-xl text-center text-xs flex items-center justify-center gap-2">
+            <i class="fa-solid fa-file-signature"></i> Free Review
+        </a>
+    </div>
+
+    <!-- Notification Toast -->
+    <div id="toast" class="fixed bottom-16 md:bottom-6 right-6 bg-navy-900 border border-gold-400 text-white px-5 py-3 rounded-xl shadow-2xl transform translate-y-28 opacity-0 transition-all duration-300 z-50 flex items-center gap-3">
+        <i class="fa-solid fa-circle-check text-emerald-400 text-xl"></i>
+        <div>
+            <h5 class="font-bold text-xs">Form Received</h5>
+            <p class="text-[11px] text-slate-300">Our team will call you shortly.</p>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        function toggleMenu() {
+            const menu = document.getElementById('mobileMenu');
+            menu.classList.toggle('hidden');
+        }
+
+        function handleForm(e) {
+            e.preventDefault();
+            const toast = document.getElementById('toast');
+            toast.classList.remove('translate-y-28', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-28', 'opacity-0');
+            }, 3500);
+
+            e.target.reset();
+        }
+    </script>
+</body>
+</html>
